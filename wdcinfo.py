@@ -63,7 +63,7 @@ def output(d, hashrate):
 	print "\n\033[4mGeneral Worldcoin Stats:\033[0m\n "
 	print "Network difficulty: " + str(d[u'network_diff'])
 	print "Total blocks found: ".join(hashrate) + "\n"
-	print "Last updated at " + time.strftime('%H:%M:%S',time.localtime()) + " | Made with \033[31m♥\033[39m by @c0ding, © 2013"
+	print "Last updated at " + time.strftime('%H:%M:%S',time.localtime()) + " | Made with \033[31m♥\033[39m by @c0ding, © 2014"
 
 def main():
 	try:
