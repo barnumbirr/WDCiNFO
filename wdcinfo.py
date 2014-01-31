@@ -44,7 +44,7 @@ def get_more_info():
 	hashrate = data.find(".//h2").text
 	hashrate = hashrate.replace("Hash Rate", "Hashrate")
 	hashrate = hashrate.replace("M/H", "MH/s")
-	hashrate = hashrate.replace(": ", "  : ")
+	hashrate = hashrate.replace(": ", ":   ")
 	table = data.xpath('//tr/td//text()')
 	table = table[2]
 	return hashrate, table
