@@ -8,7 +8,7 @@ import requests
 import lxml.html
 
 __appname__ = "WorldCoin Cryptocurrency Information"
-__version__ = "v0.5"
+__version__ = "v0.6"
 
 def get_info():
 	""" Fetches price and network difficulty from wdcticker.com """
@@ -45,9 +45,10 @@ def get_more_info():
 	hashrate = hashrate.replace("Hash Rate", "Hashrate")
 	hashrate = hashrate.replace("M/H", "MH/s")
 	hashrate = hashrate.replace(": ", ":   ")
-	table = data.xpath('//tr/td//text()')
-	table = table[2]
-	return hashrate, table
+	hashrate = hashrate.strip()
+	blocks = data.xpath('//tr/td//text()')
+	blocks = blocks[2]
+	return hashrate, blocks
 
 def output(d, hashrate):
 	""" Prints all data in a more or less elegant way """
@@ -62,7 +63,8 @@ def output(d, hashrate):
 	print "Overall Worldcoin price health: " + d[u'health_rating']
 	print "\n\033[4mGeneral Worldcoin Stats:\033[0m\n "
 	print "Network difficulty: " + str(d[u'network_diff'])
-	print "Total blocks found: ".join(hashrate) + "\n"
+	print hashrate[0]
+	print "Total blocks found: " + hashrate[1] + "\n"
 	print "Last updated at " + time.strftime('%H:%M:%S',time.localtime()) + " | Made with \033[31m♥\033[39m by @c0ding, © 2014"
 
 def main():
