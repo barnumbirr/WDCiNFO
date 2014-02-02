@@ -1,16 +1,16 @@
 
  Analyzing: https://github.com/c0ding/WDCinfo/wdcinfo.py
 
-              Total Lines: 84
+              Total Lines: 100
 
-               Code Lines: 67 (79.7619%)
-              Blank Lines: 13 (15.4761%)
+               Code Lines: 80 (80.0%)
+              Blank Lines: 15 (15.0%)
 
-            Comment Lines: 1 (1.19047%)
-         Doc String Lines: 3 (3.57142%)
+            Comment Lines: 1 (1.0%)
+         Doc String Lines: 4 (4.0%)
           Inline Comments: 1
-              Doc Strings: 3
-           Total Comments: 5
+              Doc Strings: 4
+           Total Comments: 6
 
         Longest Code Line: 134
        Shortest Code Line: 6 [main()]
@@ -19,14 +19,14 @@
     Shortest Comment Line: 23 [# -*- coding: utf-8 ...]
 
                   Imports: 5
-                Functions: 4
+                Functions: 5
                   Classes: 0
-            If Statements: 7
+            If Statements: 9
            Try Statements: 2
         Except Statements: 2
-         Print Statements: 15
-              Assignments: 21
-                Variables: 8
+         Print Statements: 16
+              Assignments: 29
+                Variables: 13
 
 
  Done analyzing: https://github.com/c0ding/WDCinfo/wdcinfo.py
