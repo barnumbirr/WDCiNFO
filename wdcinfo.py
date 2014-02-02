@@ -8,7 +8,7 @@ import requests
 import lxml.html
 
 __appname__ = "WorldCoin Cryptocurrency Information"
-__version__ = "v0.6"
+__version__ = "v.0.6"
 
 def get_info():
 	""" Fetches price and network difficulty from wdcticker.com """
