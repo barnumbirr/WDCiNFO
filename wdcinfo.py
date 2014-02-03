@@ -8,7 +8,7 @@ import requests
 import lxml.html
 
 __appname__ = "WorldCoin Cryptocurrency Information"
-__version__ = "v.0.7"
+__version__ = "v.0.8"
 
 def get_info():
 	""" Fetches price and network difficulty from wdcticker.com """
@@ -21,18 +21,18 @@ def get_info():
 			d[key] = "\033[32m✔\033[39m"
 		else:
 			d[key] = "\033[31m✘\033[39m"
-			
-	if 0 >= d[u'health_rating'] <= 2:
-		d[u'health_rating'] = "\033[31m" + str(d[u'health_rating']) + "/6" + "\033[39m"
 
-	if 3 >= d[u'health_rating'] <= 4:
-		d[u'health_rating'] = "\033[33m" + str(d[u'health_rating']) + "/6" + "\033[39m"
-
-	if 5 >= d[u'health_rating']:
+	if d[u'health_rating']>= 6:
+		d[u'health_rating'] = "\033[32m" + str(d[u'health_rating']) + str("/6") + "\033[39m"
+	
+	elif d[u'health_rating'] >= 5:
 		d[u'health_rating'] = "\033[32m" + str(d[u'health_rating']) + "/6" + "\033[39m"
 	
-	if d[u'health_rating'] <= 6:
-		d[u'health_rating'] = "\033[32m" + str(d[u'health_rating']) + str("/6") + "\033[39m"
+	elif 4 >= d[u'health_rating'] >= 3:
+		d[u'health_rating'] = "\033[33m" + str(d[u'health_rating']) + "/6" + "\033[39m"
+	
+	elif d[u'health_rating'] <= 2:
+		d[u'health_rating'] = "\033[31m" + str(d[u'health_rating']) + "/6" + "\033[39m"
 	
 	d[u'network_diff'] = '%.3f' % d[u'network_diff']
 	
@@ -59,10 +59,10 @@ def get_even_more_info():
 	total_wdc = tree[5]
 	market_volume = tree[6]
 	market_cap_change = tree[7]
-	if market_cap_change > 0:
-		market_cap_change = "\033[32m" + market_cap_change + "\033[39m"
+	if float(market_cap_change.split(" ")[0]) > 0:
+		market_cap_change = "\033[32m" + market_cap_change.split(" ")[0] + " % " + "\033[39m"
 	else:
-		market_cap_change = "\033[31m" + market_cap_change + "\033[39m"
+		market_cap_change = "\033[31m" + market_cap_change.split(" ")[0] + " % " + "\033[39m"
 	return market_cap, total_wdc, market_volume, market_cap_change
 
 def output(d, hashrate, market_cap):
@@ -88,7 +88,7 @@ def main():
 		output(get_info(), get_more_info(), get_even_more_info())
 	except:
 		print "Something went awfully wrong, please try again later."
-		
+
 if __name__ == "__main__":
 	try:
 		main()
