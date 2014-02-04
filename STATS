@@ -1,13 +1,13 @@
 
  Analyzing: https://github.com/c0ding/WDCinfo/wdcinfo.py
 
-              Total Lines: 100
+              Total Lines: 101
 
-               Code Lines: 80 (80.0%)
-              Blank Lines: 15 (15.0%)
+               Code Lines: 81 (80.1980%)
+              Blank Lines: 15 (14.8514%)
 
-            Comment Lines: 1 (1.0%)
-         Doc String Lines: 4 (4.0%)
+            Comment Lines: 1 (0.99009%)
+         Doc String Lines: 4 (3.96039%)
           Inline Comments: 1
               Doc Strings: 4
            Total Comments: 6
@@ -25,7 +25,7 @@
            Try Statements: 2
         Except Statements: 2
          Print Statements: 16
-              Assignments: 29
+              Assignments: 30
                 Variables: 13
 
 

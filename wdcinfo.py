@@ -8,7 +8,7 @@ import requests
 import lxml.html
 
 __appname__ = "WorldCoin Cryptocurrency Information"
-__version__ = "v.0.8"
+__version__ = "v.0.8.1"
 
 def get_info():
 	""" Fetches price and network difficulty from wdcticker.com """
@@ -55,10 +55,11 @@ def get_even_more_info():
 	""" Fetches market cap, trading volume, trading volume fluctuation and total WDC supply found from coinmarketcap.com """
 	data = lxml.html.parse("http://coinmarketcap.com/")
 	tree = data.xpath('//tr[@id="wdc"]/td//text()')
-	market_cap = tree[3]
-	total_wdc = tree[5]
-	market_volume = tree[6]
-	market_cap_change = tree[7]
+	tree = [x for x in tree if x != ' ']
+	market_cap = tree[2]
+	total_wdc = tree[4]
+	market_volume = tree[5]
+	market_cap_change = tree[6]
 	if float(market_cap_change.split(" ")[0]) > 0:
 		market_cap_change = "\033[32m" + market_cap_change.split(" ")[0] + " % " + "\033[39m"
 	else:
