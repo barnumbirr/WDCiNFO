@@ -8,7 +8,7 @@ import requests
 import lxml.html
 
 __appname__ = "WorldCoin Cryptocurrency Information"
-__version__ = "v.0.8.1"
+__version__ = "v.0.8.2"
 
 def get_info():
 	""" Fetches price and network difficulty from wdcticker.com """
@@ -87,15 +87,14 @@ def output(d, hashrate, market_cap):
 def main():
 	try:
 		output(get_info(), get_more_info(), get_even_more_info())
-	except:
-		print "Something went awfully wrong, please try again later."
-
-if __name__ == "__main__":
-	try:
-		main()
 		while 1 :
 			time.sleep(60)
 			os.system('cls' if os.name=='nt' else 'clear')
-			main()
+			output(get_info(), get_more_info(), get_even_more_info())
 	except KeyboardInterrupt:
 		os.system("clear")
+	except Exception, error_message:
+		print "\033[31mOops, something went wrong:\n\033[33m%s\033[39m"  % error_message
+		
+if __name__ == "__main__":
+	main()
