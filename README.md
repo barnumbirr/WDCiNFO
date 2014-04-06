@@ -35,7 +35,7 @@ The major goal is to become the cryptocurrency of choice for merchants and consu
 
 ## Useful links
 
-* [Worldcoin Foundation](http://worldcoinfoundation.org/)
+* [Worldcoin Alliance](http://www.worldcoinalliance.net/)
 * [Worldcoin Forum](http://worldcoinforum.org/)
 * [Worldcoin Wiki](http://www.wdcwiki.org/wiki/Main_Page)
 
