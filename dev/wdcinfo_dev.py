@@ -89,7 +89,7 @@ def output(d, hashrate, market_cap):
 
 def generate_json(d, hashrate, market_cap):
 	data = {'network_hashrate': hashrate[0], 'network_difficulty': str(d[u'network_diff']), 'blocks_found': hashrate[1], 'wdc_mined': market_cap[1], \
-	'market_cap': market_cap[0], 'market_cap_change': market_cap[3], 'trading_volume' :market_cap[2]}
+	'btc_usd_avg': d[u'btc_usd_avg'], 'wdc_usd_avg': d[u'wdc_usd_avg'], 'wdc_btc_avg': d[u'wdc_btc_avg']}
 	with open('wdcinfo.json', 'w') as file:
 	     json.dump(data, file, sort_keys = True, indent = 4, ensure_ascii=False)
 
